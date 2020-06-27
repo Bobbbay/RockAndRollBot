@@ -24,7 +24,7 @@ for submission in reddit.subreddit(sub).new(limit=None):
     editing = ""
     print("Started")
     print(submission.title)
-    if(submission.link_flair_text != "News"):
+    if(submission.link_flair_text == "News"):
         submission.comments.replace_more(limit=None)
         for comment in submission.comments.list():
             print("Going through comments")
