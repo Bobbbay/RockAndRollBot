@@ -43,6 +43,6 @@ for submission in reddit.subreddit(sub).new(limit=None):
         else:
             reply += "^Beep ^boop. This is a bot providing a service. If you have any questions, please [contact the moderators](https://www.reddit.com/message/compose?to=/r/SaveRockAndRoll)."
             if(reply == "This is a list of links to comments made by moderators in this thread: \n\n  ^Beep ^boop. This is a bot providing a service. If you have any questions, please [contact the moderators](https://www.reddit.com/message/compose?to=/r/SaveRockAndRoll)."):
-                submission.reply("No mod comments yet. ").mod.distinguish(sticky=True)
+                submission.reply("No mod comments yet. ")
             else:
-                submission.reply(reply).mod.distinguish(sticky=True)
+                submission.reply(reply)
