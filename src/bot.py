@@ -20,7 +20,7 @@ print("It worked!")
 
 moderators = list(reddit.subreddit(sub).moderator())
 for submission in reddit.subreddit(sub).new(limit=None):
-    reply = "Mod replies: \n\n "
+    reply = "This is a list of links to comments made by moderators in this thread: \n\n "
     editing = ""
     print("Started")
     print(submission.title)
@@ -36,13 +36,13 @@ for submission in reddit.subreddit(sub).new(limit=None):
         if editing is not "":
             comment = reddit.comment(editing)
             reply += "^Beep ^boop. This is a bot providing a service. If you have any questions, please [contact the moderators](https://www.reddit.com/message/compose?to=/r/SaveRockAndRoll)."
-            if(reply == "Mod replies: \n\n ^Beep ^boop. This is a bot providing a service. If you have any questions, please [contact the moderators](https://www.reddit.com/message/compose?to=/r/SaveRockAndRoll)."):
+            if(reply == "This is a list of links to comments made by moderators in this thread: \n\n ^Beep ^boop. This is a bot providing a service. If you have any questions, please [contact the moderators](https://www.reddit.com/message/compose?to=/r/SaveRockAndRoll)."):
                 comment.edit("No mod comments yet. ")
             else:
                 comment.edit(reply)
         else:
             reply += "^Beep ^boop. This is a bot providing a service. If you have any questions, please [contact the moderators](https://www.reddit.com/message/compose?to=/r/SaveRockAndRoll)."
-            if(reply == "Mod replies: \n\n ^Beep ^boop. This is a bot providing a service. If you have any questions, please [contact the moderators](https://www.reddit.com/message/compose?to=/r/SaveRockAndRoll)."):
+            if(reply == "This is a list of links to comments made by moderators in this thread: \n\n  ^Beep ^boop. This is a bot providing a service. If you have any questions, please [contact the moderators](https://www.reddit.com/message/compose?to=/r/SaveRockAndRoll)."):
                 submission.reply("No mod comments yet. ").mod.distinguish(sticky=True)
             else:
                 submission.reply(reply).mod.distinguish(sticky=True)
